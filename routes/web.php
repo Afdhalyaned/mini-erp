@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PriceBuyingController;
+use App\Http\Controllers\PriceSellingController;
+use App\Http\Controllers\OfferController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,15 +17,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-
 Route::get('/', function(){
     return view('dashboard',['title' => 'dashboard']);
 });
 
-Route::get('/product', function(){
-    return view('product.list', ['title' => 'product-list']);
+Route::controller(ProductController::class)->group(function () {
+    Route::get('/product', 'index');
+    Route::get('/product-detail', 'show');
+    Route::get('/product-edit', 'edit');
+    Route::post('product-update', 'update');
+    Route::get('/product-delete', 'destroy');
+});
+
+Route::controller(PriceBuyingController::class)->group(function () {
+    Route::get('/price-buying', 'index');
+    Route::get('/price-buying-create','store');
+    Route::get('/price-buying-edit', 'edit');
+    Route::post('/price-buying-update', 'update');
+    Route::get('/price-buying-delete', 'destroy');
+});
+
+Route::controller(PriceSellingController::class)->group(function () {
+    Route::get('/price-selling', 'index');
+});
+
+Route::controller(OfferController::class)->group(function () {
+    Route::get('offer', 'index');
+    Route::get('offer-detail', 'show');
 });

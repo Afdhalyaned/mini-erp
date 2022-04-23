@@ -19,20 +19,30 @@
                         <span>Product</span>
                     </a>
                 </li>
-                {{-- <li class="submenu">
+                <li class="submenu {{ ($title === "price-buying-list" || $title === "price-selling-list") ? 'active' : '' }}">
                     <a href="#">
                         <i class="fe fe-layout"></i>
                         <span>
-                            Forms
+                            Price
                         <span class="menu-arrow"></span></span>
                     </a>
                     <ul style="display: none">
                         <li>
-                            <a href="#">Basic Inputs</a>
+                            <a href="price-buying">Buying Price</a>
+                        </li>
+                        <li>
+                            <a href="price-selling">Selling Price</a>
                         </li>
                     </ul>
-                </li> --}}
-                
+                </li>
+
+                {{-- product --}}
+                <li class="{{ ($title === "offer") ? 'active' : '' }}">
+                    <a href="offer">
+                        <i class="fe fe-file"></i>
+                        <span>Offer</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

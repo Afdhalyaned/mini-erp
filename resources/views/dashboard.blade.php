@@ -14,7 +14,7 @@
                     </span>
                     <div class="dash-count">
                         <a href="#" class="count-title"
-                            >User Count</a
+                            >Total Lead</a
                         >
                         <a href="#" class="count">
                             10,320</a
@@ -35,10 +35,10 @@
                     </span>
                     <div class="dash-count">
                         <a href="#" class="count-title"
-                            >Call Duration</a
+                            >Proposal sent</a
                         >
                         <a href="#" class="count">
-                            14,628</a
+                            1,628</a
                         >
                     </div>
                 </div>
@@ -56,9 +56,9 @@
                     </span>
                     <div class="dash-count">
                         <a href="#" class="count-title"
-                            >Chat Count</a
+                            >Project Deal</a
                         >
-                        <a href="#" class="count"> 2,980</a>
+                        <a href="#" class="count"> 98</a>
                     </div>
                 </div>
             </div>
@@ -66,11 +66,11 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-12 d-flex">
+    <div class="col-md-6 d-flex">
         <div class="card card-table flex-fill">
             <div class="card-header">
                 <h4 class="card-title float-start">
-                    User List
+                    Best Selling Product
                 </h4>
                 <div class="table-search float-end">
                     <input
@@ -85,148 +85,97 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive no-radius">
-                    <table
-                        class="table table-hover table-center"
-                    >
+                    <table class="table table-hover table-center" >
                         <thead>
                             <tr>
-                                <th>User Id</th>
-                                <th>User Name</th>
+                                <th>Rank</th>
+                                <th>Product Name</th>
                                 <th class="text-center">
-                                    Joined Date
+                                    Product Category
                                 </th>
                                 <th class="text-center">
-                                    Last Seen
+                                    Total Sales
                                 </th>
                                 <th class="text-end">
-                                    Status
+                                    Action
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="text-nowrap">
-                                    <div
-                                        class="font-weight-600"
-                                    >
-                                        001
+                                    <div class="font-weight-600" >
+                                        #1
                                     </div>
                                 </td>
                                 <td class="text-nowrap">
-                                    Scott Albright
+                                    SATATYA CIBR80FL28CWS
                                 </td>
                                 <td class="text-center">
-                                    20 Jan 2019
+                                    <div class="badge bg-primary">IP Camera</div>
                                 </td>
                                 <td class="text-center">
-                                    15 mins ago
+                                    934
                                 </td>
                                 <td class="text-end">
-                                    <div
-                                        class="font-weight-600 text-danger"
-                                    >
-                                        Inactive
-                                    </div>
+                                    <a href="#">detail</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-nowrap">
-                                    <div
-                                        class="font-weight-600"
-                                    >
-                                        002
+                                    <div class="font-weight-600" >
+                                        #2
                                     </div>
                                 </td>
                                 <td class="text-nowrap">
-                                    Kevin Howard
+                                    SATATYA CIBR80FL28CWS
                                 </td>
                                 <td class="text-center">
-                                    10 Mar 2019
+                                    <div class="badge bg-primary">IP Camera</div>
                                 </td>
                                 <td class="text-center">
-                                    Just Now
+                                    934
                                 </td>
                                 <td class="text-end">
-                                    <div
-                                        class="font-weight-600 text-success"
-                                    >
-                                        Active
-                                    </div>
+                                    <a href="#">detail</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-nowrap">
-                                    <div
-                                        class="font-weight-600"
-                                    >
-                                        003
+                                    <div class="font-weight-600" >
+                                        #3
                                     </div>
                                 </td>
                                 <td class="text-nowrap">
-                                    Eric Knight
+                                    SATATYA CIBR80FL28CWS
                                 </td>
                                 <td class="text-center">
-                                    24 Jun 2019
+                                    <div class="badge bg-primary">IP Camera</div>
                                 </td>
                                 <td class="text-center">
-                                    1 hr ago
+                                    934
                                 </td>
                                 <td class="text-end">
-                                    <div
-                                        class="font-weight-600 text-success"
-                                    >
-                                        Inactive
-                                    </div>
+                                    <a href="#">detail</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-nowrap">
-                                    <div
-                                        class="font-weight-600"
-                                    >
-                                        004
+                                    <div class="font-weight-600" >
+                                        #4
                                     </div>
                                 </td>
                                 <td class="text-nowrap">
-                                    Irene Perkins
+                                    SATATYA CIBR80FL28CWS
                                 </td>
                                 <td class="text-center">
-                                    09 Sep 2019
+                                    <div class="badge bg-primary">IP Camera</div>
                                 </td>
                                 <td class="text-center">
-                                    3 mins ago
+                                    934
                                 </td>
                                 <td class="text-end">
-                                    <div
-                                        class="font-weight-600 text-success"
-                                    >
-                                        Active
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-nowrap">
-                                    <div
-                                        class="font-weight-600"
-                                    >
-                                        005
-                                    </div>
-                                </td>
-                                <td class="text-nowrap">
-                                    Carol Andre
-                                </td>
-                                <td class="text-center">
-                                    10 Oct 2020
-                                </td>
-                                <td class="text-center">
-                                    1 day ago
-                                </td>
-                                <td class="text-end">
-                                    <div
-                                        class="font-weight-600 text-danger"
-                                    >
-                                        Inactive
-                                    </div>
+                                    <a href="#">detail</a>
                                 </td>
                             </tr>
                         </tbody>

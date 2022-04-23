@@ -8,22 +8,77 @@
 
 <div class="page-header">
     <div class="row">
-        <div class="col-sm-10">
-            <h3 class="page-title">List Produk</h3>
+        <div class="col-sm-12">
+            <h3 class="page-title">Buying Price</h3>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="/">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    Data Tables
+                    Buying Price
                 </li>
             </ul>
         </div>
-        <div class="col-sm-2 text-end">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newProduct">Add Product</button>
+    </div>
+</div>
+<hr>
+<h4 class="mb-3">Update Product Price</h4>
+<div class="row">
+    <div class="col-lg-2 col-md-3 col-sm-6">
+         {{-- product name --}}
+         <div class="mb-3">
+            <label for="product-name" class="form-label">Product Name</label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Select Product</option>
+                <option value="1">NVR-256-8-CTS SATATYA NVR25608XCTS</option>
+                <option value="1">NVR-256-8-CTS SATATYA NVR25608XCTS</option>
+                <option value="1">NVR-256-8-CTS SATATYA NVR25608XCTS</option>
+                <option value="1">NVR-256-8-CTS SATATYA NVR25608XCTS</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-3 col-sm-6">
+        {{-- pricing date --}}
+        <div class="mb-3">
+            <label for="product-name" class="form-label">Date</label>
+            <input type="date" class="form-control" name="product-name" value="2022-04-23" required>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-3 col-sm-6">
+        {{-- product purchase price --}}
+        <div class="mb-3">
+            <label for="product-name" class="form-label">New Price</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Rp</span>
+                <input type="number" class="form-control" ame="product-name" value="" required>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-3 col-sm-6">
+        {{-- product name --}}
+         <div class="mb-3">
+            <label for="product-name" class="form-label">Supplier</label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Select Supplier</option>
+                <option value="1">PT Sukses Makmur Sentosa</option>
+                <option value="1">PT Sukses Makmur Sentosa</option>
+                <option value="1">PT Sukses Makmur Sentosa</option>
+                <option value="1">PT Sukses Makmur Sentosa</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-3 col-sm-6">
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary mt-3" type="button">Save</button>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-3 col-sm-6">
+        <div class="d-grid gap-2">
+            <button class="btn btn-outline-success mt-3" type="button">Import Excel</button>
         </div>
     </div>
 </div>
+<hr>
 
 <div class="row">
     <div class="col-sm-12">
@@ -36,26 +91,28 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Image</th>
                                 <th>SKU Code</th>
                                 <th>Product Name</th>
                                 <th>Product Category</th>
+                                <th>Buying Price</th>
+                                <th>Price Update</th>
+                                <th>Supplier</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>
-                                    <div class="avatar">
-                                        <img class="avatar-img rounded" alt="User Image" src="assets/img/product/matrix-nvr.jpg">
-                                        </div>
-                                </td>
                                 <td>NVR-256-8-CTS</td>
                                 <td>SATATYA NVR25608XCTS</td>
                                 <td>NVR</td>
                                 <td>
-                                    <a href="/product-detail">
+                                    {{number_format(1000000)}}
+                                </td>
+                                <td>23-04-2022</td>
+                                <td>PT. Jiwa Sosialita</td>
+                                <td>
+                                    <a href="price-buying-edit">
                                         <button type="button" class="btn btn-primary btn-sm">Detail</button>
                                     </a>
                                 </td>
@@ -107,12 +164,6 @@
             <div class="mb-3">
                 <label for="product-decription" class="form-label">Product Detail</label>
                 <textarea class="form-control" rows="3" name="product-description"></textarea>
-            </div>
-
-            {{-- product image --}}
-            <div class="mb-3">
-                <label for="product-image" class="form-label">Product Image</label>
-                <input class="form-control" type="file" name="product-image">
             </div>
 
           </form>

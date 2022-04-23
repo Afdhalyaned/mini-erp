@@ -34,7 +34,7 @@
                 <span class="user-img"
                     ><img
                         class="rounded-circle"
-                        src="assets/img/profiles/avatar-01.jpg"
+                        src="assets/img/profiles/avatar-15.jpg"
                         width="31"
                         alt="Seema Sisty"
                 /></span>
@@ -43,7 +43,7 @@
                 <div class="user-header">
                     <div class="avatar avatar-sm">
                         <img
-                            src="assets/img/profiles/avatar-01.jpg"
+                            src="assets/img/profiles/avatar-15.jpg"
                             alt="User Image"
                             class="avatar-img rounded-circle"
                         />

@@ -9,18 +9,18 @@
 <div class="page-header">
     <div class="row">
         <div class="col-sm-10">
-            <h3 class="page-title">List Produk</h3>
+            <h3 class="page-title">Offer List</h3>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="/">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    Data Tables
+                    Offer List
                 </li>
             </ul>
         </div>
         <div class="col-sm-2 text-end">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newProduct">Add Product</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newProduct">Create new Offering</button>
         </div>
     </div>
 </div>
@@ -30,32 +30,48 @@
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table
-                        class="datatable table table-stripped"
-                    >
+                    <table class="datatable table table-stripped">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Image</th>
-                                <th>SKU Code</th>
-                                <th>Product Name</th>
-                                <th>Product Category</th>
+                                <th>Date</th>
+                                <th>Ref Code</th>
+                                <th>Client Name</th>
+                                <th>Company</th>
+                                <th>Project Name</th>
+                                <th>Project Value</th>
+                                <th>Category</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
+                                {{-- no --}}
                                 <td>1</td>
+                                
+                                {{-- Date --}}
+                                <td>2022-04-30</td>
+
+                                {{-- ref code --}}
+                                <td>004/ABC/OFFERING/I/2022</td>
+
+                                {{-- client name --}}
+                                <td>Hartono</td>
+
+                                {{-- client company --}}
+                                <td>PT Hartono Peduli Lindungi</td>
+
+                                {{-- Project Name --}}
+                                <td>Instalasi CCTV kawasan A</td>
+
+                                {{-- Project Value --}}
+                                <td>Rp {{number_format(100000000, 2)}}</td>
+
+                                {{-- project category --}}
+                                <td><div class="badge bg-primary">CCTV</div></td>
+
                                 <td>
-                                    <div class="avatar">
-                                        <img class="avatar-img rounded" alt="User Image" src="assets/img/product/matrix-nvr.jpg">
-                                        </div>
-                                </td>
-                                <td>NVR-256-8-CTS</td>
-                                <td>SATATYA NVR25608XCTS</td>
-                                <td>NVR</td>
-                                <td>
-                                    <a href="/product-detail">
+                                    <a href="/offer-detail">
                                         <button type="button" class="btn btn-primary btn-sm">Detail</button>
                                     </a>
                                 </td>
