@@ -43,13 +43,13 @@
     </div>
     <div class="col">
         <div class="image">
-            <img src="assets/img/product/matrix-nvr.jpg" alt="">
+            <img src="{{ asset('assets/img/product/matrix-nvr.jpg') }}" alt="">
         </div>
     </div>
 </div>
 <div class="row text-right">
     <div class="col-sm-6 text-right">
-        <a href="product-edit">
+        <a href="{{ route('products.edit', $product) }}">
             <div class="d-grid gap-2 col-6 mx-auto">
                 <button type="button" class="btn btn-primary">Edit</button>
             </div>

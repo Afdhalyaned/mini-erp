@@ -1,11 +1,11 @@
 <div class="header">
     <div class="header-left">
         <a href="index.html" class="logo">
-            <img src="assets/img/logo.png" alt="Logo" />
+            <img src="{{ asset('assets/img/logo.png') }}" alt="Logo" />
         </a>
         <a href="index.html" class="logo logo-small">
             <img
-                src="assets/img/logo-small.png"
+                src="{{ asset('assets/img/logo-small.png') }}"
                 alt="Logo"
                 width="30"
                 height="30"
@@ -34,7 +34,7 @@
                 <span class="user-img"
                     ><img
                         class="rounded-circle"
-                        src="assets/img/profiles/avatar-15.jpg"
+                        src="{{ asset('assets/img/profiles/avatar-15.jpg') }}"
                         width="31"
                         alt="Seema Sisty"
                 /></span>
@@ -43,7 +43,7 @@
                 <div class="user-header">
                     <div class="avatar avatar-sm">
                         <img
-                            src="assets/img/profiles/avatar-15.jpg"
+                            src="{{ asset('assets/img/profiles/avatar-15.jpg') }}"
                             alt="User Image"
                             class="avatar-img rounded-circle"
                         />

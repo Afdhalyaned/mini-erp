@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductCategoriesController;
 use App\Http\Controllers\PriceBuyingController;
 use App\Http\Controllers\PriceSellingController;
 use App\Http\Controllers\OfferController;
@@ -21,13 +22,9 @@ Route::get('/', function(){
     return view('dashboard',['title' => 'dashboard']);
 });
 
-Route::controller(ProductController::class)->group(function () {
-    Route::get('/product', 'index');
-    Route::get('/product-detail', 'show');
-    Route::get('/product-edit', 'edit');
-    Route::post('product-update', 'update');
-    Route::get('/product-delete', 'destroy');
-});
+Route::resource('products', ProductController::class);
+
+Route::resource('product-categories', ProductCategoriesController::class);
 
 Route::controller(PriceBuyingController::class)->group(function () {
     Route::get('/price-buying', 'index');
@@ -45,3 +42,4 @@ Route::controller(OfferController::class)->group(function () {
     Route::get('offer', 'index');
     Route::get('offer-detail', 'show');
 });
+

@@ -13,12 +13,23 @@
                 </li>
                 
                 {{-- product --}}
-                <li class="{{ ($title === "product-list") ? 'active' : '' }}">
-                    <a href="product">
+                <li class="submenu {{ ($title === "product-list" || $title === "product-categories") ? 'active' : '' }}">
+                    <a href="#">
                         <i class="fe fe-file"></i>
-                        <span>Product</span>
+                        <span>
+                            Product
+                        <span class="menu-arrow"></span></span>
                     </a>
+                    <ul style="display: none">
+                        <li>
+                            <a href="{{ route('products.index') }}">List</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('product-categories.index') }}">Category</a>
+                        </li>
+                    </ul>
                 </li>
+                {{-- Price --}}
                 <li class="submenu {{ ($title === "price-buying-list" || $title === "price-selling-list") ? 'active' : '' }}">
                     <a href="#">
                         <i class="fe fe-layout"></i>
@@ -36,7 +47,7 @@
                     </ul>
                 </li>
 
-                {{-- product --}}
+                {{-- offer --}}
                 <li class="{{ ($title === "offer") ? 'active' : '' }}">
                     <a href="offer">
                         <i class="fe fe-file"></i>
