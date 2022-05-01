@@ -57,7 +57,7 @@
                                 <td>NVR</td>
                                 <td>
                                     <a href="{{ route('products.show', $product) }}">
-                                        <button type="button" onclick="return confirm('are you sure wanna delete this record?')" class="btn btn-primary btn-sm">Detail</button>
+                                        <button type="button" class="btn btn-primary btn-sm">Detail</button>
                                     </a>
                                     <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline-block">
                                         {{ csrf_field() }}

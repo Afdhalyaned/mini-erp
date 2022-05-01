@@ -14,7 +14,7 @@ class ProductCategoriesController extends Controller
      */
     public function index()
     {
-        $productCategories = ProductCategories::all();
+        $productCategories = ProductCategories::where('is_deleted', '!=', true)->get();
         return view('product-categories.index', [
             'title' => 'product categories',
             'productCategories' => $productCategories
@@ -28,7 +28,7 @@ class ProductCategoriesController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -41,6 +41,7 @@ class ProductCategoriesController extends Controller
     {   
         $productCategories = new ProductCategories;
         $productCategories->name = $request->name;
+        $productCategories->is_deleted = false;
         $productCategories->save();
         return redirect()->route('product-categories.index');
     }
@@ -62,9 +63,12 @@ class ProductCategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(ProductCategories $productCategory)
     {
-        //
+        return view('product-categories.edit', [
+            'title' => 'product-categories',
+            'productCategory' => $productCategory
+        ]);
     }
 
     /**
@@ -76,7 +80,10 @@ class ProductCategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $productCategory = ProductCategories::findorfail($id);
+        $productCategory->name = $request->name;
+        $productCategory->save();
+        return redirect()->route('product-categories.index')->with('status', 'record has been updated');
     }
 
     /**
@@ -87,6 +94,9 @@ class ProductCategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $productCategory = ProductCategories::findorfail($id);
+        $productCategory->is_deleted = true;
+        $productCategory->save();
+        return redirect('product-categories.index')->with('status', 'record has been updated');
     }
 }
