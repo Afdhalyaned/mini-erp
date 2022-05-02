@@ -12,10 +12,12 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::where('is_deleted', '!=', true)->get();
+        $productCategories = ProductCategories::where('is_deleted', '!=', true)->get();
 
-        return view('product.list', [
+        return view('product.index', [
             'title' => 'product-list',
-            'products' => $products
+            'products' => $products,
+            'productCategories' => $productCategories
         ]);
     }
 
@@ -35,8 +37,8 @@ class ProductController extends Controller
         if($request->file('image')){
             $file = $request->file('image');
             $name = $file->hashName();
-            $path = Storage::putFileAs('public/storage/product', $file, $name);
-            $product->image = $path;
+            $path = Storage::putFileAs('public/product', $file, $name);
+            $product->image = $name;
         }
         
         $product->description = $request->description;
@@ -84,7 +86,7 @@ class ProductController extends Controller
         $product->is_deleted = false;
         $product->save();
         // dd($product);
-        return redirect('/products')->with('status', 'data updated');
+        return redirect()->route('products.show',$id)->with('status', 'data updated');
     }
 
     public function destroy(Product $product)

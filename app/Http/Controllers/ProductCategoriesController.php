@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ProductCategories;
+use App\Models\Product;
 
 class ProductCategoriesController extends Controller
 {
@@ -52,9 +53,17 @@ class ProductCategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(ProductCategories $productCategory)
     {
-        //
+        $products = ProductCategories::find($productCategory->id)->product()->get();
+        // dd($products);
+
+        return view('product-categories.detail',[
+            'title' => 'product categories',
+            'productCategory' => $productCategory,
+            'products' => $products
+
+        ]);
     }
 
     /**
@@ -92,11 +101,10 @@ class ProductCategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(ProductCategories $productCategory)
     {
-        $productCategory = ProductCategories::findorfail($id);
         $productCategory->is_deleted = true;
         $productCategory->save();
-        return redirect('product-categories.index')->with('status', 'record has been updated');
+        return redirect()->route('product-categories.index')->with('status', 'record has been updated');
     }
 }

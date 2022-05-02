@@ -13,7 +13,7 @@
                 </li>
                 
                 {{-- product --}}
-                <li class="submenu {{ ($title === "product-list" || $title === "product-categories") ? 'active' : '' }}">
+                <li class="submenu {{ ($title === "product-list" || $title === "product categories") ? 'active' : '' }}">
                     <a href="#">
                         <i class="fe fe-file"></i>
                         <span>

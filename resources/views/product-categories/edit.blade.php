@@ -1,10 +1,28 @@
 @extends('layouts.master')
 
 @section('content')
-
+<div class="page-header">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3 class="page-title">Edit Product Category : <strong>{{ $productCategory->name }}</strong></h3>
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{{ route('product-categories.index') }}">
+                        Product Category
+                    </a>
+                </li>
+                <li class="breadcrumb-item active">
+                    {{ $productCategory->name }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 <div class="row">
     <div class="col">
-        <h4>Edit Product</h4>
         <form action="{{ route('product-categories.update', $productCategory->id) }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             {{ method_field('PATCH') }}

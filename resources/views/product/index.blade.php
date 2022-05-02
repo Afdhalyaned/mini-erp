@@ -15,7 +15,7 @@
                     <a href="/">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    Data Tables
+                    Product
                 </li>
             </ul>
         </div>
@@ -46,19 +46,33 @@
                         <tbody>
                             @foreach($products as $product)
                             <tr>
+                                {{-- product ID --}}
                                 <td>{{ $product->id }}</td>
+                                {{-- product image --}}
                                 <td>
                                     <div class="avatar">
                                         <img class="avatar-img rounded" alt="User Image" src="{{ asset('storage/product/'.$product->image) }}">
                                         </div>
                                 </td>
+                                {{-- sku code --}}
                                 <td>{{ $product->sku_code }}</td>
+                                {{-- product name --}}
                                 <td>{{ $product->name }}</td>
-                                <td>{{ $product->productCategory->name }}</td>
+                                {{-- product category --}}
                                 <td>
+                                    <a href="{{ route('product-categories.show', $product->category_id) }}">
+                                        <div class="badge bg-primary">
+                                            {{ $product->productCategory->name }}
+                                        </div>
+                                    </a>
+                                </td>
+                                {{-- action --}}
+                                <td>
+                                    {{-- detail --}}
                                     <a href="{{ route('products.show', $product) }}">
                                         <button type="button" class="btn btn-primary btn-sm">Detail</button>
                                     </a>
+                                    {{-- delete --}}
                                     <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline-block">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
@@ -97,10 +111,11 @@
             <div class="mb-3">
                 <label for="product-category" class="form-label">Product Category</label>
                 <select class="form-select" aria-label="Default select example" name="category_id">
-                    <option selected>Open this select menu</option>
-                    <option value="1">CCTV</option>
-                    <option value="2">NVR</option>
-                    <option value="3">Hard Disk</option>
+                    <option value="" selected class="text-center">--- Open this select menu ---</option>
+                    @foreach ($productCategories as $productCategory)
+                        <option value="{{ $productCategory->id }}" >{{ $productCategory->name }}</option>
+                        
+                    @endforeach
                 </select>
             </div>
 
@@ -114,7 +129,7 @@
             {{-- product detail --}}
             <div class="mb-3">
                 <label for="decription" class="form-label">Product Detail</label>
-                <textarea class="form-control" rows="3" name="decription"></textarea>
+                <textarea class="form-control" rows="3" name="description"></textarea>
             </div>
 
             {{-- product image --}}
