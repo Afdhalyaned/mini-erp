@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductCategories;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -29,9 +31,17 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->sku_code = $request->sku_code;
         $product->category_id = $request->category_id;
-        $product->image = $request->image;
+        // image
+        if($request->file('image')){
+            $file = $request->file('image');
+            $name = $file->hashName();
+            $path = Storage::putFileAs('public/storage/product', $file, $name);
+            $product->image = $path;
+        }
+        
         $product->description = $request->description;
         $product->is_deleted = false;
+        // dd($path);
         $product->save();
         return redirect()->route('products.index');
     }
@@ -46,9 +56,12 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
+        $productCategories = ProductCategories::where('is_deleted', false)->get();
+        
         return view('product.edit', [
             'title' => 'product-list',
-            'product' => $product
+            'product' => $product,
+            'productCategories' => $productCategories
         ]);
     }
 
@@ -59,7 +72,14 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->sku_code = $request->sku_code;
         $product->category_id = $request->category_id;
-        $product->image = $request->image;
+        // dd($request->file('image'));
+        // image
+        if($request->file('image')){
+            $file = $request->file('image');
+            $name = $file->hashName();
+            $path = Storage::putFileAs('public/product', $file, $name);
+            $product->image = $name;
+        }
         $product->description = $request->description;
         $product->is_deleted = false;
         $product->save();

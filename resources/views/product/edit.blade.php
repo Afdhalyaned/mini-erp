@@ -17,9 +17,9 @@
             <div class="mb-3">
                 <label for="category_id" class="form-label">Product Category</label>
                 <select class="form-select" aria-label="Default select example" name="category_id">
-                    <option value="1">CCTV</option>
-                    <option selected value="2">NVR</option>
-                    <option value="3">Hard Disk</option>
+                    @foreach ($productCategories as $productCategory)
+                        <option value="{{ $productCategory->id }}" {{ ($product->category_id==$productCategory->id) ? 'selected' : ''}}>{{ $productCategory->name }}</option>
+                    @endforeach
                 </select>
             </div>
 

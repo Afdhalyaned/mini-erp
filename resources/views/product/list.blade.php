@@ -49,12 +49,12 @@
                                 <td>{{ $product->id }}</td>
                                 <td>
                                     <div class="avatar">
-                                        <img class="avatar-img rounded" alt="User Image" src="assets/img/product/matrix-nvr.jpg">
+                                        <img class="avatar-img rounded" alt="User Image" src="{{ asset('storage/product/'.$product->image) }}">
                                         </div>
                                 </td>
-                                <td>NVR-256-8-CTS</td>
-                                <td>SATATYA NVR25608XCTS</td>
-                                <td>NVR</td>
+                                <td>{{ $product->sku_code }}</td>
+                                <td>{{ $product->name }}</td>
+                                <td>{{ $product->productCategory->name }}</td>
                                 <td>
                                     <a href="{{ route('products.show', $product) }}">
                                         <button type="button" class="btn btn-primary btn-sm">Detail</button>
