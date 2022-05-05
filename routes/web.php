@@ -23,20 +23,9 @@ Route::get('/', function(){
 });
 
 Route::resource('products', ProductController::class);
-
 Route::resource('product-categories', ProductCategoriesController::class);
-
-Route::controller(PriceBuyingController::class)->group(function () {
-    Route::get('/price-buying', 'index');
-    Route::get('/price-buying-create','store');
-    Route::get('/price-buying-edit', 'edit');
-    Route::post('/price-buying-update', 'update');
-    Route::get('/price-buying-delete', 'destroy');
-});
-
-Route::controller(PriceSellingController::class)->group(function () {
-    Route::get('/price-selling', 'index');
-});
+Route::resource('price-buying', PriceBuyingController::class);
+Route::resource('price-selling', PriceSellingController::class);
 
 Route::controller(OfferController::class)->group(function () {
     Route::get('offer', 'index');

@@ -39,10 +39,10 @@
                     </a>
                     <ul style="display: none">
                         <li>
-                            <a href="price-buying">Buying Price</a>
+                            <a href="{{ route('price-buying.index') }}">Buying Price</a>
                         </li>
                         <li>
-                            <a href="price-selling">Selling Price</a>
+                            <a href="{{ route('price-selling.index') }}">Selling Price</a>
                         </li>
                     </ul>
                 </li>

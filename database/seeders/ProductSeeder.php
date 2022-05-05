@@ -15,16 +15,105 @@ class ProductSeeder extends Seeder
     public function run()
     {
         DB::table('products')->insert([
-            'name' => 'SATATYA NVR25608XCTS',
-            'sku_code' => 'matrix-nvr-256-08',
-            'category_id' => 1,
-            'description' => '32 Channel Enterprise Range Server Grade NVR with 4K Support and 8HDD Slots 
-            • 32 IP Channel Inputs; Display: 1 x VGA and 4 x Display Port
-            • Dual Input Hot Swap Redundant (1+1) Power Supply 
-            • 8 Hot Swap 3.5"/2.5" SATA HDD/SSD Drive Bay (18TB Capacity, Hard Disk Not Included) 
-            • 1 GbE & 10 GbE Lan Port; 512 Mbps Uplink & 512 Mbps Downlink 
-            • SFP card, 4GB Nvidia Graphic card, Hardware Raid support 0/1/5/6/10 ',
-            'is_deleted' => false
+            [
+                'name' => 'SATATYA NVR25608XCTS',
+                'sku_code' => 'matrix-nvr-256-08',
+                'category_id' => 1,
+                'image' => '0Z20LuWC0gPcU1qffdhudUnvMgdphbSDjsLSyCS6.jpg',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'is_deleted' => false
+            ],[
+                'name' => 'SATATYA NVR06408XCTS',
+                'sku_code' => 'matrix-nvr-64-08',
+                'category_id' => 1,
+                'image' => '0Z20LuWC0gPcU1qffdhudUnvMgdphbSDjsLSyCS6.jpg',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'is_deleted' => false
+            ],[
+                'name' => 'SATATYA NVR03208XCTS',
+                'sku_code' => 'matrix-nvr-32-08',
+                'category_id' => 1,
+                'image' => '0Z20LuWC0gPcU1qffdhudUnvMgdphbSDjsLSyCS6.jpg',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'is_deleted' => false
+            ],[
+                'name' => 'SATATYA NVR0801X',
+                'sku_code' => 'matrix-nvr-08-01',
+                'category_id' => 1,
+                'image' => '0Z20LuWC0gPcU1qffdhudUnvMgdphbSDjsLSyCS6.jpg',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'is_deleted' => false
+            ],[
+                'name' => 'SATATYA NVR1601X',
+                'sku_code' => 'matrix-nvr-16-01',
+                'category_id' => 1,
+                'image' => '0Z20LuWC0gPcU1qffdhudUnvMgdphbSDjsLSyCS6.jpg',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'is_deleted' => false
+            ],[
+                'name' => 'SATATYA NVR1602X',
+                'sku_code' => 'matrix-nvr-16-02',
+                'category_id' => 1,
+                'image' => '0Z20LuWC0gPcU1qffdhudUnvMgdphbSDjsLSyCS6.jpg',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'is_deleted' => false
+            ],[
+                'name' => 'SATATYA NVR3202X',
+                'sku_code' => 'matrix-nvr-32-02',
+                'category_id' => 1,
+                'image' => '0Z20LuWC0gPcU1qffdhudUnvMgdphbSDjsLSyCS6.jpg',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'is_deleted' => false
+            ],[
+                'name' => 'SATATYA NVR3204X',
+                'sku_code' => 'matrix-nvr-32-04',
+                'category_id' => 1,
+                'image' => '0Z20LuWC0gPcU1qffdhudUnvMgdphbSDjsLSyCS6.jpg',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'is_deleted' => false
+            ],[
+                'name' => 'SATATYA NVR6404X',
+                'sku_code' => 'matrix-nvr-64-04',
+                'category_id' => 1,
+                'image' => '0Z20LuWC0gPcU1qffdhudUnvMgdphbSDjsLSyCS6.jpg',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'is_deleted' => false
+            ],[
+                'name' => 'SATATYA NVR6404X',
+                'sku_code' => 'matrix-nvr-64-08',
+                'category_id' => 1,
+                'image' => '0Z20LuWC0gPcU1qffdhudUnvMgdphbSDjsLSyCS6.jpg',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'is_deleted' => false
+            ],[
+                'name' => 'CIBR20FL36CWS',
+                'sku_code' => 'matrix-ipcam-b-20-36',
+                'category_id' => 2,
+                'image' => 'B7dKykmrkywwm4newzeLgU6r234qag5olLUoLOhx.png',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'is_deleted' => false
+            ],[
+                'name' => 'CIDR20FL36CWS',
+                'sku_code' => 'matrix-ipcam-d-20-36',
+                'category_id' => 2,
+                'image' => 'MSNRNPjtp6xoJlz9Bd39ZTTP7414R7Y4txygq2zI.png',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'is_deleted' => false
+            ],[
+                'name' => 'CIBR20FL60CWS',
+                'sku_code' => 'matrix-ipcam-b-20-60',
+                'category_id' => 2,
+                'image' => 'B7dKykmrkywwm4newzeLgU6r234qag5olLUoLOhx.png',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'is_deleted' => false
+            ],[
+                'name' => 'CIDR20FL60CWS',
+                'sku_code' => 'matrix-ipcam-d-20-60',
+                'category_id' => 2,
+                'image' => 'MSNRNPjtp6xoJlz9Bd39ZTTP7414R7Y4txygq2zI.png',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'is_deleted' => false
+            ]
         ]);
     }
 }

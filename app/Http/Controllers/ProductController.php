@@ -23,7 +23,7 @@ class ProductController extends Controller
 
     public function create()
     {
-        //
+        // 
     }
 
     public function store(Request $request)
@@ -50,16 +50,19 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
+        $priceBuying = Product::findorfail($product->id)->priceBuying;
+        // dd($priceBuying);
         return view('product.detail', [
             'title' => 'product-list',
-            'product' => $product
+            'product' => $product,
+            'priceBuying' => $priceBuying
         ]);
     }
 
     public function edit(Product $product)
     {
         $productCategories = ProductCategories::where('is_deleted', false)->get();
-        
+        dd($product);
         return view('product.edit', [
             'title' => 'product-list',
             'product' => $product,

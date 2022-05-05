@@ -15,7 +15,7 @@
                     <a href="/">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    Product
+                    Products
                 </li>
             </ul>
         </div>
