@@ -27,7 +27,8 @@ class PriceSellingController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
-
+        // $margin_category = $product->priceSelling->margin_category;
+        // dd($margin_category);
         return view('price-selling.edit', [
             'title'=>'price-selling-list',
             'product' => $product

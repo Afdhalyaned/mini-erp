@@ -58,10 +58,18 @@
             <div class="mb-3">
                 <label for="margin_category" class="form-label">Margin Category</label>
                 <select class="form-select" name="margin_category" id="marginCategory" required>
-                    <option selected><< Select Margin Category >></option>
-                    <option value="percent">percent</option>
-                    <option value="nominal">nominal</option>
-                    <option value="sellingPrice">selling price</option>
+                    
+                    @if ($product->priceSelling)
+                        <option value="percent" {{ ($product->priceSelling->margin_category == 'percent') ? "selected" : ""}}>percent</option>
+                        <option value="nominal" {{ ($product->priceSelling->margin_category == 'nominal') ? "selected" : ""}}>nominal</option>
+                        <option value="sellingPrice" {{ ($product->priceSelling->margin_category == 'sellingPrice') ? "selected" : ""}}>selling price</option>
+                    @else
+                        <option selected><< Select Margin Category >></option>
+                        <option value="percent">percent</option>
+                        <option value="nominal">nominal</option>
+                        <option value="sellingPrice">selling price</option>
+                    @endif
+                    
                 </select>
             </div>
 
@@ -69,15 +77,15 @@
             <div class="mb-3">
                 <label for="margin_value" class="form-label">Margin Value</label>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" name="margin_value" value="" id="marginValue" required>
+                    <input type="text" class="form-control" name="margin_value" value="{{ ($product->priceSelling) ? $product->priceSelling->margin_value : "" }}" id="marginValue" required>
                 </div>
             </div>
 
+            {{-- count button --}}
             <div class="mb-3">
                 <div class="d-grid gap-2">
                     <button onclick="count();" class="btn btn-primary" type="button">Count</button>
                   </div>
-                
             </div>
             
             {{-- selling price --}}
@@ -85,7 +93,7 @@
                 <label for="price-buying" class="form-label">Selling Price</label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">Rp</span>
-                        <input type="text" class="form-control" id="priceSelling" disabled>
+                        <input type="text" class="form-control" id="priceSelling" value="{{ ($product->priceSelling) ? $product->priceSelling->selling_price : ""}}" disabled>
                     <span class="input-group-text">.00</span>
                 </div>
             </div>

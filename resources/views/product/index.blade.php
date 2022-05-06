@@ -52,7 +52,7 @@
                                 <td>
                                     <div class="avatar">
                                         <img class="avatar-img rounded" alt="User Image" src="{{ asset('storage/product/'.$product->image) }}">
-                                        </div>
+                                    </div>
                                 </td>
                                 {{-- sku code --}}
                                 <td>{{ $product->sku_code }}</td>
@@ -146,7 +146,7 @@
         </div>
       </div>
     </div>
-  </div>
+</div>
 @endsection
 
 @section('script')

@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
             ProductSeeder::class,
             ProductCategorySeeder::class,
             PriceBuyingSeeder::class,
-            PriceSellingSeeder::class
+            PriceSellingSeeder::class,
+            ClientSeeder::class
         ]);
     }
 }

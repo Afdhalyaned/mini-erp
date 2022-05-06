@@ -6,6 +6,9 @@ use App\Http\Controllers\ProductCategoriesController;
 use App\Http\Controllers\PriceBuyingController;
 use App\Http\Controllers\PriceSellingController;
 use App\Http\Controllers\OfferController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ClientAddressController;
+use App\Http\Controllers\ClientPicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +29,9 @@ Route::resource('products', ProductController::class);
 Route::resource('product-categories', ProductCategoriesController::class);
 Route::resource('price-buying', PriceBuyingController::class);
 Route::resource('price-selling', PriceSellingController::class);
+Route::resource('clients', ClientController::class);
+Route::resource('client-addresses', ClientAddressController::class);
+Route::resource('client-pic', ClientPicController::class);
 
 Route::controller(OfferController::class)->group(function () {
     Route::get('offer', 'index');
