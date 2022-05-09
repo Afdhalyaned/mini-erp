@@ -69,7 +69,7 @@
                                         <button type="button" class="btn btn-primary btn-sm">Detail</button>
                                     </a>
                                     {{-- delete --}}
-                                    <form action="{{ route('products.destroy', $client->id) }}" method="POST" style="display:inline-block">
+                                    <form action="{{ route('clients.destroy', $client->id) }}" method="POST" style="display:inline-block">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
                                         <button type="submit" onclick="return confirm('Are you sure wanna delete this record?')" class="btn btn-secondary btn-sm">Delete</button>

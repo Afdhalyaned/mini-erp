@@ -9,4 +9,9 @@ class Client extends Model
 {
     use HasFactory;
     protected $table = 'client';
+
+    public function pic()
+    {
+        return $this->hasMany(ClientPic::class);
+    }
 }

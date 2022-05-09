@@ -15,6 +15,7 @@ class CreateClientPicTable extends Migration
     {
         Schema::create('client_pic', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('client_id');
             $table->string('name');
             $table->string('role');
             $table->smallInteger('gender');
