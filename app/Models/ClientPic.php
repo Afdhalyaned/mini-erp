@@ -9,4 +9,9 @@ class ClientPic extends Model
 {
     use HasFactory;
     protected $table = 'client_pic';
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'client_id', 'id');
+    }
 }

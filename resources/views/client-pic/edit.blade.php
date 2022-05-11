@@ -13,7 +13,7 @@
                     <a href="{{ route('price-selling.index') }}">(company name)</a> 
                 </li>
                 <li class="breadcrumb-item active">
-                    Selling Price
+                    PIC
                 </li>
             </ul>
         </div>
@@ -21,13 +21,31 @@
 </div>
 <div class="row">
     <div class="col">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="{{ route('client-pic.update', $pic )  }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             @method('PATCH')
-            {{-- product name --}}
+            {{-- name --}}
             <div class="mb-3">
-                <label for="product-name" class="form-label">Product Name</label>
-                <input type="text" class="form-control" name="product-name" value="" disabled>
+                <label for="product-name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" value="{{ $pic->name }}">
+            </div>
+
+            {{-- role --}}
+            <div class="mb-3">
+                <label for="role" class="form-label">Role</label>
+                <input type="text" class="form-control" name="role" value="{{ $pic->role }}">
+            </div>
+
+            {{-- phone --}}
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text" class="form-control" name="phone" value="{{ $pic->phone }}">
+            </div>
+
+            {{-- email --}}
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" class="form-control" name="email" value="{{ $pic->email }}">
             </div>
 
             

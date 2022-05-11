@@ -22,7 +22,7 @@ class ClientController extends Controller
     public function show(Client $client)
     {
         $pics = $client->pic;
-        dd($pics);
+        // dd($pics);
         return view('client.detail', [
             'title' => 'companies',
             'client' => $client

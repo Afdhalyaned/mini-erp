@@ -59,28 +59,34 @@
         <h4>PIC</h4>
         <div class="card-info">
             <div class="row">
+                @foreach($client->pic as $pic)
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                          <h5 class="card-title">Bayu Putra</h5>
-                          <span>Procurement</span><br>
-                          <span>080912456789</span><br>
-                          <span>bayu@company.com</span>
+                          <h5 class="card-title">{{ $pic->name }}</h5>
+                          <span>{{ $pic->role }}</span><br>
+                          <span>{{ $pic->phone }}</span><br>
+                          <span>{{ $pic->email }}</span>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="d-grid gap-2">
-                                    <button class="btn btn-warning" href="">Edit</button>
-                                </div>
+                                <a href="{{ route('client-pic.edit', $pic->id) }}">
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-warning" >Edit</button>
+                                    </div>
+                                </a>
                             </div>
                             <div class="col-md-6">
-                                <div class="d-grid gap-2">
-                                    <button class="btn btn-danger">Delete</button>
-                                </div>
+                                <a href="/">
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-danger" href="/">Delete</button>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
             <div class="d-grid gap-2">
                 <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#addPic">Add new PIC</button>

@@ -14,9 +14,37 @@ class ClientPicSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('client-pic')->insert([
+        DB::table('client_pic')->insert([
             [
+                'client_id' => 1,
                 'name' => 'anton',
+                'role' => 'building maintenance',
+                'gender' => 1,
+                'phone' => '081234564321',
+                'email' => 'anton@gmail.com',
+                'is_deleted' => false
+            ],
+            [
+                'client_id' => 1,
+                'name' => 'bagus',
+                'role' => 'building maintenance',
+                'gender' => 1,
+                'phone' => '081234564321',
+                'email' => 'anton@gmail.com',
+                'is_deleted' => false
+            ],
+            [
+                'client_id' => 1,
+                'name' => 'eko',
+                'role' => 'building maintenance',
+                'gender' => 1,
+                'phone' => '081234564321',
+                'email' => 'anton@gmail.com',
+                'is_deleted' => false
+            ],
+            [
+                'client_id' => 1,
+                'name' => 'prabowo',
                 'role' => 'building maintenance',
                 'gender' => 1,
                 'phone' => '081234564321',
