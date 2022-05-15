@@ -22,6 +22,9 @@ class CreateClientAddressTable extends Migration
             $table->string('distric')->nullable();
             $table->string('urban_village')->nullable();
             $table->string('village')->nullable();
+            $table->string('postal_code')->nullable();
+            $table->string('map_url')->nullable();
+            $table->boolean('is_deleted');
             $table->timestamps();
         });
     }

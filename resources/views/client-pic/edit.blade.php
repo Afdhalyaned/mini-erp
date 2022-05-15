@@ -10,7 +10,12 @@
                     <a href="/">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{{ route('price-selling.index') }}">(company name)</a> 
+                    <a href="{{ route('clients.index') }}">
+                        Clients
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{{ route('clients.index') }}">{{ $pic->client->name }}</a> 
                 </li>
                 <li class="breadcrumb-item active">
                     PIC

@@ -14,4 +14,9 @@ class Client extends Model
     {
         return $this->hasMany(ClientPic::class);
     }
+
+    public function address()
+    {
+        return $this->hasMany(ClientAddress::class);
+    }
 }

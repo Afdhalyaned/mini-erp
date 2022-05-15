@@ -21,8 +21,8 @@ class ClientController extends Controller
 
     public function show(Client $client)
     {
-        $pics = $client->pic;
-        // dd($pics);
+        // $pics = $client->pic;
+        // dd($pics->where('is_deleted', false));
         return view('client.detail', [
             'title' => 'companies',
             'client' => $client

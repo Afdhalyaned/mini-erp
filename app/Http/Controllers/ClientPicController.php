@@ -28,9 +28,27 @@ class ClientPicController extends Controller
         return redirect()->route('clients.show', $clientPic->client->id);
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        return redirct()->route('clients.show', 5);
+        // dd($request);
+        $clientPic = new ClientPic;
+        $clientPic->client_id = $request->client_id;
+        $clientPic->name = $request->name;
+        $clientPic->role = $request->role;
+        $clientPic->gender = $request->gender;
+        $clientPic->phone = $request->phone;
+        $clientPic->email = $request->email;
+        $clientPic->is_deleted = false;
+        $clientPic->save();
+        return redirect()->route('clients.show', $request->client_id);
+    }
+
+    public function destroy($id)
+    {
+        $clientPic = ClientPic::find($id);
+        $clientPic->is_deleted = true;
+        $clientPic->save();
+        return redirect()->route('clients.show', $clientPic->client->id);
     }
 }
  

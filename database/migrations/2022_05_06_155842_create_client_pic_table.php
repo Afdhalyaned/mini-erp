@@ -17,10 +17,10 @@ class CreateClientPicTable extends Migration
             $table->id();
             $table->bigInteger('client_id');
             $table->string('name');
-            $table->string('role');
-            $table->smallInteger('gender');
-            $table->string('phone');
-            $table->string('email');
+            $table->string('role')->nullable();
+            $table->smallInteger('gender')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
             $table->boolean('is_deleted');
             $table->timestamps();
         });

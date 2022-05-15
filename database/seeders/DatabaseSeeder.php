@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             PriceBuyingSeeder::class,
             PriceSellingSeeder::class,
             ClientSeeder::class,
-            ClientPicSeeder::class
+            ClientPicSeeder::class,
+            ClientAddressSeeder::class,
         ]);
     }
 }
