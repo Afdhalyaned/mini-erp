@@ -14,7 +14,7 @@ class ClientController extends Controller
     {
         $clients = Client::where('is_deleted', false)->get();
         return view('client.index', [
-            'title' => 'companies',
+            'title' => 'clients',
             'clients' => $clients
         ]);
     }
@@ -24,7 +24,7 @@ class ClientController extends Controller
         // $pics = $client->pic;
         // dd($pics->where('is_deleted', false));
         return view('client.detail', [
-            'title' => 'companies',
+            'title' => 'clients',
             'client' => $client
         ]);
     }

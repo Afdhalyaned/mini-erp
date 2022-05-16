@@ -38,7 +38,3 @@ Route::controller(OfferController::class)->group(function () {
     Route::get('offer-detail', 'show');
 });
 
-Route::get('/absen', function(){
-    return view('absen');
-});
-

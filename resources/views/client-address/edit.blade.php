@@ -10,10 +10,10 @@
                     <a href="/">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{{ route('client.index') }}">{{ $pic->client->name }}</a> 
+                    <a href="{{ route('clients.index') }}">{{ $address->client->name }}</a> 
                 </li>
                 <li class="breadcrumb-item active">
-                    PIC
+                    Address
                 </li>
             </ul>
         </div>
@@ -21,31 +21,48 @@
 </div>
 <div class="row">
     <div class="col">
-        <form action="{{ route('client-pic.update', $pic )  }}" method="post" enctype="multipart/form-data">
-            {{ csrf_field() }}
+        <form action="{{ route('client-addresses.update', $address )  }}" method="post" enctype="multipart/form-data">
+            @csrf
             @method('PATCH')
-            {{-- name --}}
+            {{-- address name --}}
             <div class="mb-3">
-                <label for="product-name" class="form-label">Name</label>
-                <input type="text" class="form-control" name="name" value="{{ $pic->name }}">
+                <label for="name" class="form-label">Address Name</label>
+                <input type="text" class="form-control" name="name" value="{{ $address->name }}" required>
             </div>
-
-            {{-- role --}}
+            {{-- Address Detail --}}
             <div class="mb-3">
-                <label for="role" class="form-label">Role</label>
-                <input type="text" class="form-control" name="role" value="{{ $pic->role }}">
+                <label for="detail" class="form-label">Detail</label>
+                <input type="text" class="form-control" name="detail" value="{{ $address->detail }}">
             </div>
-
-            {{-- phone --}}
+            {{-- province --}}
             <div class="mb-3">
-                <label for="phone" class="form-label">Phone</label>
-                <input type="text" class="form-control" name="phone" value="{{ $pic->phone }}">
+                <label for="province" class="form-label">Province</label>
+                <input type="text" class="form-control" name="province" value="{{ $address->province }}">
             </div>
-
-            {{-- email --}}
+            {{-- distric --}}
             <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="text" class="form-control" name="email" value="{{ $pic->email }}">
+                <label for="distric" class="form-label">Distric</label>
+                <input type="text" class="form-control" name="distric" value="{{ $address->distric }}">
+            </div>
+            {{-- Urban Village --}}
+            <div class="mb-3">
+                <label for="urban_village" class="form-label">Urban Village</label>
+                <input type="text" class="form-control" name="urban_village" value="{{ $address->urban_village }}">
+            </div>
+            {{-- village --}}
+            <div class="mb-3">
+                <label for="village" class="form-label">Village</label>
+                <input type="text" class="form-control" name="village" value="{{ $address->village }}">
+            </div>
+            {{-- Postal code --}}
+            <div class="mb-3">
+                <label for="postal_code" class="form-label">Postal Code</label>
+                <input type="text" class="form-control" name="postal_code" value="{{ $address->postal_code }}">
+            </div>
+            {{-- Map Url --}}
+            <div class="mb-3">
+                <label for="map_url" class="form-label">Map Url</label>
+                <input type="text" class="form-control" name="map_url" value="{{ $address->map_url }}">
             </div>
 
             

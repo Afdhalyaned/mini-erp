@@ -11,7 +11,7 @@ class ClientPicController extends Controller
         $pic = ClientPic::find($id);
         // dd($pic);
         return view('client-pic.edit',[
-            'title' => 'companies',
+            'title' => 'clients',
             'pic' => $pic
         ]);
     }

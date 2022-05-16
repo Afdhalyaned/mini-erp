@@ -99,12 +99,36 @@
     <div class="col">
         <h4>Address</h4>
         <div class="card-body">
-            @foreach($client->address as $address)
+            @foreach($client->address->where('is_deleted',false) as $address)
             <div class="card text-center mb-3">
                 <div class="card-body">
-                  <h5 class="card-title">{{ $address->name }}</h5>
-                  <p class="card-text">{{ $address->detail ." ". $address->village ." ". $address->urban_village ." ". $address->distric ." ". $address->province}}</p>
-                  {{-- <a href="#" class="btn btn-primary btn-sm">Open Map</a> --}}
+                    <h5 class="card-title">{{ $address->name }}</h5>
+                    <p class="card-text">{{ $address->detail ." ". $address->village ." ". $address->urban_village ." ". $address->distric ." ". $address->province}}</p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="{{ $address->map_url }}" target="_blank">
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-primary" >Map</button>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="{{ route('client-addresses.edit', $address) }}">
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-warning" >Edit</button>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <form action="{{ route('client-addresses.destroy', $address) }}" method="POST">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <div class="d-grid gap-2">
+                                    <button type="submit" onclick="return confirm('Are you sure wanna delete this record?')" class="btn btn-danger">Delete</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
             @endforeach
@@ -222,36 +246,56 @@
             </div>
             <div class="modal-body">
                 {{-- form --}}
-                <form action="{{ route('clients.update', $client) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('client-addresses.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    {{-- PIC name --}}
+                    {{-- Client --}}
                     <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" name="name" required>
-                    </div>
-                    {{-- PIC role --}}
-                    <div class="mb-3">
-                        <label for="role" class="form-label">Role</label>
-                        <input type="text" class="form-control" name="role">
-                    </div>
-                    {{-- PIC Gender --}}
-                    <div class="mb-3">
-                        <select name="gender" id="gender" class="form-select" required>
-                            <option value=""><< Select Gender >></option>
-                            <option value="1">Male</option>
-                            <option value="2">Female</option>
+                        <label for="client_id" class="form-label">Client Name</label>
+                        <select name="client_id" id="client_id" class="form-select" readonly="readonly">
+                            <option value="{{ $client->id }}" selected>{{ $client->name }}</option>
                         </select>
                     </div>
-                    {{-- phone number --}}
+                    {{-- address name --}}
                     <div class="mb-3">
-                        <label for="phone" class="form-label">Phone</label>
-                        <input type="text" class="form-control" name="phone">
+                        <label for="name" class="form-label">Address Name</label>
+                        <input type="text" class="form-control" name="name" required>
                     </div>
-                    {{-- email --}}
+                    {{-- Address Detail --}}
                     <div class="mb-3">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" class="form-control" required>
+                        <label for="detail" class="form-label">Detail</label>
+                        <input type="text" class="form-control" name="detail">
                     </div>
+                    {{-- province --}}
+                    <div class="mb-3">
+                        <label for="province" class="form-label">Province</label>
+                        <input type="text" class="form-control" name="province">
+                    </div>
+                    {{-- distric --}}
+                    <div class="mb-3">
+                        <label for="distric" class="form-label">Distric</label>
+                        <input type="text" class="form-control" name="distric">
+                    </div>
+                    {{-- Urban Village --}}
+                    <div class="mb-3">
+                        <label for="urban_village" class="form-label">Urban Village</label>
+                        <input type="text" class="form-control" name="urban_village">
+                    </div>
+                    {{-- village --}}
+                    <div class="mb-3">
+                        <label for="village" class="form-label">Village</label>
+                        <input type="text" class="form-control" name="village">
+                    </div>
+                    {{-- Postal code --}}
+                    <div class="mb-3">
+                        <label for="postal_code" class="form-label">Postal Code</label>
+                        <input type="text" class="form-control" name="postal_code">
+                    </div>
+                    {{-- Map Url --}}
+                    <div class="mb-3">
+                        <label for="map_url" class="form-label">Map Url</label>
+                        <input type="text" class="form-control" name="map_url">
+                    </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Save</button>

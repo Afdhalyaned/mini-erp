@@ -48,24 +48,11 @@
                 </li>
 
                 {{-- clent --}}
-                <li class="submenu {{ ($title === "companies" || $title === "pic" || $title === "Addresses") ? 'active' : '' }}">
-                    <a href="#">
+                <li class="{{ ($title === "clients") ? 'active' : '' }}">
+                    <a href="{{ route('clients.index') }}">
                         <i class="fe fe-layout"></i>
-                        <span>
-                            Clients
-                        <span class="menu-arrow"></span></span>
+                        <span>Clients</span>
                     </a>
-                    <ul style="display: none">
-                        <li>
-                            <a href="{{ route('clients.index') }}">Companies</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('client-addresses.index') }}">Addresses</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('client-pic.index') }}">PIC</a>
-                        </li>
-                    </ul>
                 </li>
 
                 {{-- offer --}}
